@@ -1,0 +1,15 @@
+C:\Users\Vinicius\Documents\GitHub\SuperHeroi\SuperHeroi\SuperHeroi.Infra.Data\bin\Debug\SuperHeroi.Infra.Data.dll.config
+C:\Users\Vinicius\Documents\GitHub\SuperHeroi\SuperHeroi\SuperHeroi.Infra.Data\bin\Debug\SuperHeroi.Infra.Data.dll
+C:\Users\Vinicius\Documents\GitHub\SuperHeroi\SuperHeroi\SuperHeroi.Infra.Data\bin\Debug\SuperHeroi.Infra.Data.pdb
+C:\Users\Vinicius\Documents\GitHub\SuperHeroi\SuperHeroi\SuperHeroi.Infra.Data\bin\Debug\EntityFramework.dll
+C:\Users\Vinicius\Documents\GitHub\SuperHeroi\SuperHeroi\SuperHeroi.Infra.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Vinicius\Documents\GitHub\SuperHeroi\SuperHeroi\SuperHeroi.Infra.Data\bin\Debug\SuperHeroi.Domain.dll
+C:\Users\Vinicius\Documents\GitHub\SuperHeroi\SuperHeroi\SuperHeroi.Infra.Data\bin\Debug\SuperHeroi.Domain.pdb
+C:\Users\Vinicius\Documents\GitHub\SuperHeroi\SuperHeroi\SuperHeroi.Infra.Data\bin\Debug\EntityFramework.xml
+C:\Users\Vinicius\Documents\GitHub\SuperHeroi\SuperHeroi\SuperHeroi.Infra.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Vinicius\Documents\GitHub\SuperHeroi\SuperHeroi\SuperHeroi.Infra.Data\obj\Debug\SuperHeroi.Infra.Data.csprojResolveAssemblyReference.cache
+C:\Users\Vinicius\Documents\GitHub\SuperHeroi\SuperHeroi\SuperHeroi.Infra.Data\obj\Debug\SuperHeroi.Infra.Data.dll
+C:\Users\Vinicius\Documents\GitHub\SuperHeroi\SuperHeroi\SuperHeroi.Infra.Data\obj\Debug\SuperHeroi.Infra.Data.pdb
+C:\Users\Vinicius\Documents\GitHub\SuperHeroi\SuperHeroi\SuperHeroi.Infra.Data\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Users\Vinicius\Documents\GitHub\SuperHeroi\SuperHeroi\SuperHeroi.Infra.Data\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\Vinicius\Documents\GitHub\SuperHeroi\SuperHeroi\SuperHeroi.Infra.Data\bin\Debug\Microsoft.Practices.ServiceLocation.xml
