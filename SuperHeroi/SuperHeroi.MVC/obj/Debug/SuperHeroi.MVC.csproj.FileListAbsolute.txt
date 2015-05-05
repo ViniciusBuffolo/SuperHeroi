@@ -48,3 +48,5 @@ C:\Users\Vinicius\Documents\GitHub\SuperHeroi\SuperHeroi\SuperHeroi.MVC\bin\Enti
 C:\Users\Vinicius\Documents\GitHub\SuperHeroi\SuperHeroi\SuperHeroi.MVC\obj\Debug\SuperHeroi.MVC.csprojResolveAssemblyReference.cache
 C:\Users\Vinicius\Documents\GitHub\SuperHeroi\SuperHeroi\SuperHeroi.MVC\obj\Debug\SuperHeroi.MVC.dll
 C:\Users\Vinicius\Documents\GitHub\SuperHeroi\SuperHeroi\SuperHeroi.MVC\obj\Debug\SuperHeroi.MVC.pdb
+C:\Users\Vinicius\Documents\GitHub\SuperHeroi\SuperHeroi\SuperHeroi.MVC\bin\EntityFramework.SqlServer.dll
+C:\Users\Vinicius\Documents\GitHub\SuperHeroi\SuperHeroi\SuperHeroi.MVC\bin\EntityFramework.SqlServer.xml
