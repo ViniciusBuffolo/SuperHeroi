@@ -11,10 +11,14 @@ namespace SuperHeroi.MVC.Controllers
     public class HeroisController : Controller, IDisposable
     {
         private readonly IHeroiAppService _heroiAppService;
+        private readonly IPoderAppService _poderAppService;
 
-        public HeroisController(IHeroiAppService heroiAppService)
+        public HeroisController(
+            IHeroiAppService heroiAppService,
+            IPoderAppService poderAppService)
         {
             _heroiAppService = heroiAppService;
+            _poderAppService = poderAppService;
         }
 
         // GET: Herois
@@ -32,7 +36,26 @@ namespace SuperHeroi.MVC.Controllers
         // GET: Herois/Create
         public ActionResult Create()
         {
-            return View();
+            var poderAll = _poderAppService.GetAll();
+
+            var heroiViewModel = new HeroiViewModel()
+            {
+                PoderAssignedList = new List<PoderAssigned>()
+            };
+
+            foreach (var itemPoder in poderAll)
+            {
+                var obj = new PoderAssigned()
+                {
+                    PoderId = itemPoder.PoderId,
+                    Descricao = itemPoder.Descricao,
+                    Assigned = false
+                };
+
+                heroiViewModel.PoderAssignedList.Add(obj);
+            }
+
+            return View(heroiViewModel);
         }
 
         // POST: Herois/Create
@@ -41,9 +64,14 @@ namespace SuperHeroi.MVC.Controllers
         {
             if (ModelState.IsValid)
             {
+                foreach (var itemPoderAssigned in heroiViewModel.PoderAssignedList.Where(x => x.Assigned))
+                {
+                    heroiViewModel.Poderes.Add(_poderAppService.GetById(itemPoderAssigned.PoderId));
+                }
+
                 _heroiAppService.Add(heroiViewModel);
 
-                return RedirectToAction("Index;");
+                return RedirectToAction("Index");
             }
 
             return View(heroiViewModel);
@@ -87,6 +115,7 @@ namespace SuperHeroi.MVC.Controllers
         void IDisposable.Dispose()
         {
             _heroiAppService.Dispose();
+            _poderAppService.Dispose();
         }
     }
 }

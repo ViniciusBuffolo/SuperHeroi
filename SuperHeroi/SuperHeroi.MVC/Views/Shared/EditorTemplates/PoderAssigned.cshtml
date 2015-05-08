@@ -1,0 +1,7 @@
+﻿@model SuperHeroi.Application.ViewModels.PoderAssigned
+
+<fieldset style="width: 200px; display: inline">
+    @Html.HiddenFor(model => model.PoderId)
+    @Html.CheckBoxFor(model => model.Assigned)
+    <label>@Html.DisplayFor(model => model.Descricao)</label>
+</fieldset>

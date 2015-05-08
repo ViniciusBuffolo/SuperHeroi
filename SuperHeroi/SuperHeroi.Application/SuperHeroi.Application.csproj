@@ -67,6 +67,7 @@
     <Compile Include="PoderAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\HeroiViewModel.cs" />
+    <Compile Include="ViewModels\PoderAssigned.cs" />
     <Compile Include="ViewModels\PoderViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -50,3 +50,4 @@ C:\Users\Vinicius\Documents\GitHub\SuperHeroi\SuperHeroi\SuperHeroi.MVC\obj\Debu
 C:\Users\Vinicius\Documents\GitHub\SuperHeroi\SuperHeroi\SuperHeroi.MVC\obj\Debug\SuperHeroi.MVC.pdb
 C:\Users\Vinicius\Documents\GitHub\SuperHeroi\SuperHeroi\SuperHeroi.MVC\bin\EntityFramework.SqlServer.dll
 C:\Users\Vinicius\Documents\GitHub\SuperHeroi\SuperHeroi\SuperHeroi.MVC\bin\EntityFramework.SqlServer.xml
+C:\Users\Vinicius\Documents\GitHub\SuperHeroi\SuperHeroi\SuperHeroi.MVC\bin\AutoMapper.Net4.dll

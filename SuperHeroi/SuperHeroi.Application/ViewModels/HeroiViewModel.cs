@@ -14,6 +14,7 @@ namespace SuperHeroi.Application.ViewModels
         {
             HeroiId = Guid.NewGuid();
             Poderes = new Collection<PoderViewModel>();
+            PoderAssignedList = new List<PoderAssigned>();
         }
 
         [Key]
@@ -24,5 +25,7 @@ namespace SuperHeroi.Application.ViewModels
         public String Nome { get; set; }
 
         public virtual ICollection<PoderViewModel> Poderes { get; set; }
+
+        public List<PoderAssigned> PoderAssignedList { get; set; }
     }
 }
