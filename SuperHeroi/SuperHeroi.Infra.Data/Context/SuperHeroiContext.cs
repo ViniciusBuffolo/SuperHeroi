@@ -20,6 +20,7 @@ namespace SuperHeroi.Infra.Data.Context
 
         public IDbSet<Heroi> Herois { get; set; }
         public IDbSet<Poder> Poderes { get; set; }
+        public IDbSet<HeroiPoder> HeroisPoderes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

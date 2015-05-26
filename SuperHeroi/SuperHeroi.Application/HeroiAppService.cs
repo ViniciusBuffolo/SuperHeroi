@@ -25,15 +25,15 @@ namespace SuperHeroi.Application
         {
             var heroi = Mapper.Map<HeroiViewModel, Heroi>(heroiViewModel);
 
-            foreach (var itemPoder in heroiViewModel.Poderes)
-            {
-                var obj = new Poder()
-                {
-                    PoderId = itemPoder.PoderId,
-                    Descricao = itemPoder.Descricao
-                };
-                heroi.PoderList.Add(obj);
-            }
+            //foreach (var itemPoder in heroiViewModel.Poderes)
+            //{
+            //    var obj = new Poder()
+            //    {
+            //        PoderId = itemPoder.PoderId,
+            //        Descricao = itemPoder.Descricao
+            //    };
+            //    heroi.PoderList.Add(obj);
+            //}
 
             BeginTransaction();
             _heroiService.Add(heroi);

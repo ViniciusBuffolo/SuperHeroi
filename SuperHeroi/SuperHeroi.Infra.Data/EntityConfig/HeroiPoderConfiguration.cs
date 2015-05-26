@@ -8,15 +8,26 @@ using SuperHeroi.Domain.Entities;
 
 namespace SuperHeroi.Infra.Data.EntityConfig
 {
-    public class HeroiConfiguration : EntityTypeConfiguration<Heroi>
+    public class HeroiPoderConfiguration : EntityTypeConfiguration<HeroiPoder>
     {
-        public HeroiConfiguration()
+        public HeroiPoderConfiguration()
         {
-            HasKey(f => f.HeroiId);
+            HasKey(f => f.HeroiPoderId);
 
-            Property(f => f.Nome)
-                .IsRequired()
-                .HasMaxLength(250);
+            Property(f => f.HeroiId)
+                .IsRequired();
+
+            Property(f => f.PoderId)
+                .IsRequired();
+
+            this.HasRequired(t => t.Heroi)
+                .WithMany(t => t.HeroisPoderes)
+                .HasForeignKey(d => d.HeroiId);
+
+            this.HasRequired(t => t.Poder)
+                .WithMany(t => t.HeroisPoderes)
+                .HasForeignKey(d => d.PoderId);
+
 
 
             // MAPEAMENTO HEROI - PODER -> N-N

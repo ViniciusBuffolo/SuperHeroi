@@ -12,13 +12,16 @@ namespace SuperHeroi.MVC.Controllers
     {
         private readonly IHeroiAppService _heroiAppService;
         private readonly IPoderAppService _poderAppService;
+        private readonly IHeroiPoderAppService _heroiPoderAppService;
 
         public HeroisController(
             IHeroiAppService heroiAppService,
-            IPoderAppService poderAppService)
+            IPoderAppService poderAppService,
+            IHeroiPoderAppService heroiPoderAppService)
         {
             _heroiAppService = heroiAppService;
             _poderAppService = poderAppService;
+            _heroiPoderAppService = heroiPoderAppService;
         }
 
         // GET: Herois
@@ -64,13 +67,17 @@ namespace SuperHeroi.MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                foreach (var itemPoderAssigned in heroiViewModel.PoderAssignedList.Where(x => x.Assigned))
-                {
-                    heroiViewModel.Poderes.Add(_poderAppService.GetById(itemPoderAssigned.PoderId));
-                }
-
                 _heroiAppService.Add(heroiViewModel);
 
+                foreach (var itemPoderAssigned in heroiViewModel.PoderAssignedList.Where(x => x.Assigned))
+                {
+                    //heroiViewModel.HeroisPoderes.Add(_heroiPoderAppService.GetById(itemPoderAssigned.PoderId));
+                    var model = new HeroiPoderViewModel();
+                    model.HeroiId = heroiViewModel.HeroiId;
+                    model.PoderId = itemPoderAssigned.PoderId;
+
+                    _heroiPoderAppService.Add(model);
+                }
                 return RedirectToAction("Index");
             }
 
@@ -80,7 +87,37 @@ namespace SuperHeroi.MVC.Controllers
         // GET: Herois/Edit/5
         public ActionResult Edit(Guid id)
         {
-            return View(_heroiAppService.GetById(id));
+            var heroiViewModel = _heroiAppService.ObterHeroiCompleto(id).First();
+            var poderAll = _poderAppService.GetAll();
+
+            var poderAssigned = new List<PoderAssigned>();
+
+            foreach (var itemPoder in poderAll)
+            {
+                var obj = new PoderAssigned()
+                {
+                    PoderId = itemPoder.PoderId,
+                    Descricao = itemPoder.Descricao,
+                    Assigned = false
+                };
+                poderAssigned.Add(obj);
+            }
+
+            foreach (var itemAssigned in poderAssigned)
+            {
+                foreach (var itemPoder in heroiViewModel.HeroisPoderes)
+                {
+                    if (itemPoder.PoderId == itemAssigned.PoderId)
+                    {
+                        itemAssigned.Assigned = true;
+                    }
+                }
+            }
+
+            heroiViewModel.PoderAssignedList.Clear();
+            heroiViewModel.PoderAssignedList = poderAssigned;
+
+            return View(heroiViewModel);
         }
 
         // POST: Herois/Edit/5
@@ -91,7 +128,24 @@ namespace SuperHeroi.MVC.Controllers
             {
                 _heroiAppService.Update(heroiViewModel);
 
-                return RedirectToAction("Index;");
+                var listPoder = _heroiPoderAppService.BuscarPoderPorIdHeroi(heroiViewModel.HeroiId);
+                foreach (var itemPoder in listPoder)
+                {
+                    _heroiPoderAppService.Remove(itemPoder);
+                }
+
+                foreach (var itemPoderAssigned in heroiViewModel.PoderAssignedList.Where(x => x.Assigned))
+                {
+                    var model = new HeroiPoderViewModel
+                    {
+                        HeroiId = heroiViewModel.HeroiId,
+                        PoderId = itemPoderAssigned.PoderId
+                    };
+
+                    _heroiPoderAppService.Add(model);
+                }
+
+                return RedirectToAction("Index");
             }
 
             return View(heroiViewModel);

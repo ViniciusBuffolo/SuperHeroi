@@ -3,3 +3,13 @@ C:\Users\Vinicius\Documents\GitHub\SuperHeroi\SuperHeroi\SuperHeroi.Domain\bin\D
 C:\Users\Vinicius\Documents\GitHub\SuperHeroi\SuperHeroi\SuperHeroi.Domain\obj\Debug\SuperHeroi.Domain.csprojResolveAssemblyReference.cache
 C:\Users\Vinicius\Documents\GitHub\SuperHeroi\SuperHeroi\SuperHeroi.Domain\obj\Debug\SuperHeroi.Domain.dll
 C:\Users\Vinicius\Documents\GitHub\SuperHeroi\SuperHeroi\SuperHeroi.Domain\obj\Debug\SuperHeroi.Domain.pdb
+C:\Gabriel\Sistemas\SuperHeroi-master\SuperHeroi\SuperHeroi.Domain\bin\Debug\SuperHeroi.Domain.dll
+C:\Gabriel\Sistemas\SuperHeroi-master\SuperHeroi\SuperHeroi.Domain\bin\Debug\SuperHeroi.Domain.pdb
+C:\Gabriel\Sistemas\SuperHeroi-master\SuperHeroi\SuperHeroi.Domain\obj\Debug\SuperHeroi.Domain.csprojResolveAssemblyReference.cache
+C:\Gabriel\Sistemas\SuperHeroi-master\SuperHeroi\SuperHeroi.Domain\obj\Debug\SuperHeroi.Domain.dll
+C:\Gabriel\Sistemas\SuperHeroi-master\SuperHeroi\SuperHeroi.Domain\obj\Debug\SuperHeroi.Domain.pdb
+C:\Users\Vinicius\Desktop\SuperHeroi-master\SuperHeroi\SuperHeroi.Domain\bin\Debug\SuperHeroi.Domain.dll
+C:\Users\Vinicius\Desktop\SuperHeroi-master\SuperHeroi\SuperHeroi.Domain\bin\Debug\SuperHeroi.Domain.pdb
+C:\Users\Vinicius\Desktop\SuperHeroi-master\SuperHeroi\SuperHeroi.Domain\obj\Debug\SuperHeroi.Domain.csprojResolveAssemblyReference.cache
+C:\Users\Vinicius\Desktop\SuperHeroi-master\SuperHeroi\SuperHeroi.Domain\obj\Debug\SuperHeroi.Domain.dll
+C:\Users\Vinicius\Desktop\SuperHeroi-master\SuperHeroi\SuperHeroi.Domain\obj\Debug\SuperHeroi.Domain.pdb

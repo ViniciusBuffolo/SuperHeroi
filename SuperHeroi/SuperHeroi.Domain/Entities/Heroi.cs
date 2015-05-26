@@ -11,13 +11,15 @@ namespace SuperHeroi.Domain.Entities
         public Heroi()
         {
             HeroiId = Guid.NewGuid();
-            PoderList = new List<Poder>();
+            //PoderList = new List<Poder>();
+            HeroisPoderes = new List<HeroiPoder>();
         }
 
         public Guid HeroiId { get; set; }
         public string Nome { get; set; }
 
 
-        public virtual ICollection<Poder> PoderList { get; set; }
+        //public virtual ICollection<Poder> PoderList { get; set; }
+        public virtual ICollection<HeroiPoder> HeroisPoderes { get; set; }
     }
 }
