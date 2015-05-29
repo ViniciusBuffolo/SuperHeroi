@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,8 @@ namespace SuperHeroi.Infra.Data.Repositories
 
         public IEnumerable<HeroiPoder> BuscarPoderPorIdHeroi(Guid idHeroi)
         {
-            return base.Find(x => x.HeroiId == idHeroi);
+            return DbSet.AsNoTracking().Where(x => x.HeroiId == idHeroi);
+            //return base.Find(x => x.HeroiId == idHeroi);
         }
     }
 }
