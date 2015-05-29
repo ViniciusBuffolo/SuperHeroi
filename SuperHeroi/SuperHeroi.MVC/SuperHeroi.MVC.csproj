@@ -186,6 +186,7 @@
     <Content Include="Views\Herois\Edit.cshtml" />
     <Content Include="Views\Herois\Delete.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\PoderAssigned.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\PoderAssigned.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

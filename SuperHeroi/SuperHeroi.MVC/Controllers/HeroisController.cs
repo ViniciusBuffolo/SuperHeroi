@@ -33,7 +33,31 @@ namespace SuperHeroi.MVC.Controllers
         // GET: Herois/Details/5
         public ActionResult Details(Guid id)
         {
-            return View(_heroiAppService.GetById(id));
+            var heroiViewModel = _heroiAppService.ObterHeroiCompleto(id).First();
+            var poderAll = _poderAppService.GetAll();
+
+            var poderAssigned = new List<PoderAssigned>();
+
+            foreach (var itemAssigned in poderAll)
+            {
+                foreach (var itemPoder in heroiViewModel.HeroisPoderes)
+                {
+                    if (itemPoder.PoderId == itemAssigned.PoderId)
+                    {
+                        var obj = new PoderAssigned()
+                        {
+                            PoderId = itemAssigned.PoderId,
+                            Descricao = itemAssigned.Descricao,
+                            Assigned = true
+                        };
+                        poderAssigned.Add(obj);
+                    }
+                }
+            }
+
+            heroiViewModel.PoderAssignedList = poderAssigned;
+
+            return View(heroiViewModel);
         }
 
         // GET: Herois/Create
@@ -154,14 +178,46 @@ namespace SuperHeroi.MVC.Controllers
         // GET: Herois/Delete/5
         public ActionResult Delete(Guid id)
         {
-            return View(_heroiAppService.GetById(id));
+            var heroiViewModel = _heroiAppService.ObterHeroiCompleto(id).First();
+            var poderAll = _poderAppService.GetAll();
+
+            var poderAssigned = new List<PoderAssigned>();
+
+            foreach (var itemAssigned in poderAll)
+            {
+                foreach (var itemPoder in heroiViewModel.HeroisPoderes)
+                {
+                    if (itemPoder.PoderId == itemAssigned.PoderId)
+                    {
+                        var obj = new PoderAssigned()
+                        {
+                            PoderId = itemAssigned.PoderId,
+                            Descricao = itemAssigned.Descricao,
+                            Assigned = true
+                        };
+                        poderAssigned.Add(obj);
+                    }
+                }
+            }
+
+            heroiViewModel.PoderAssignedList = poderAssigned;
+
+            return View(heroiViewModel);
         }
 
         // POST: Herois/Delete/5
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(Guid id)
         {
-            _heroiAppService.Remove(_heroiAppService.GetById(id));
+            var heroiViewModel = _heroiAppService.GetById(id);
+
+            var listPoder = _heroiPoderAppService.BuscarPoderPorIdHeroi(heroiViewModel.HeroiId);
+            foreach (var itemPoder in listPoder)
+            {
+                _heroiPoderAppService.Remove(itemPoder);
+            }
+
+            _heroiAppService.Remove(heroiViewModel);
 
             return RedirectToAction("Index");
         }
