@@ -1,4 +1,7 @@
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using SuperHeroi.Infra.CrossCutting.IoC;
+using SuperHeroi.Infra.CrossCutting.IoC.Security.Domain;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(SuperHeroi.MVC.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(SuperHeroi.MVC.App_Start.NinjectWebCommon), "Stop")]
@@ -46,6 +49,9 @@ namespace SuperHeroi.MVC.App_Start
             {
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
+
+                kernel.Bind<IUserStore<ApplicationUser>>().To<UserStore<ApplicationUser>>();
+                kernel.Bind<UserManager<ApplicationUser>>().ToSelf();
 
                 return kernel;
             }
