@@ -1,16 +1,12 @@
-﻿using Microsoft.Owin;
-using Owin;
-using SuperHeroi.Infra.CrossCutting.IoC.Security.Startup;
-using SuperHeroi.MVC;
+﻿using Owin;
 
-[assembly: OwinStartup("StartupConfiguration", typeof(Startup))]
 namespace SuperHeroi.MVC
 {
-    public class Startup
+    public partial class Startup
     {
         public void Configuration(IAppBuilder app)
         {
-            new IdentityStartup().Configuration(app);
+            ConfigureAuth(app);
         }
     }
 }

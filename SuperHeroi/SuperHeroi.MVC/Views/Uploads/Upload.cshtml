@@ -1,0 +1,99 @@
+﻿
+@{
+    ViewBag.Title = "Upload";
+}
+
+<h2>Upload</h2>
+
+<p><a href="#" id="hl-crop-image">Crop Image</a></p>
+
+
+@using (Html.BeginForm("Upload", "Uploads", FormMethod.Post, new { @encType = "multipart/form-data" }))
+{
+    <input type="file" name="img" />
+
+    <input type="submit" name="submit" value="upload" />
+}
+
+@if (ViewBag.Filename != null)
+{
+    <img id="my-origin-image" src="@ViewBag.Filename" alt="" />
+}
+
+<p>
+    <img id="my-cropped-image" src="#" style="display:none;" alt="" />
+</p>
+
+
+
+@section scripts{
+    <script type="text/javascript">
+
+        var imageCropWidth = 0;
+        var imageCropHeight = 0;
+        var cropPointX = 0;
+        var cropPointY = 0;
+
+        $(document).ready(function () {
+            initCrop();
+        });
+
+        $("#hl-crop-image").on("click", function (e) {
+            e.preventDefault();
+            cropImage();
+        });
+
+        function initCrop() {
+            $('#my-origin-image').Jcrop({
+                onChange: showCoords,
+                bgColor: 'black',
+                bgOpacity: .4,
+                aspectRatio: 4 / 3,
+                minSize: [555, 415],
+                maxSize: [555, 415],
+                setSelect: [277, 250, 555, 415]
+            });
+        }
+
+        function showCoords(e) {
+
+            imageCropWidth = e.w;
+            imageCropHeight = e.h;
+
+            cropPointX = e.x;
+            cropPointY = e.y;
+        }
+
+        function cropImage() {
+
+            if (imageCropWidth == 0 && imageCropHeight == 0) {
+                alert("Por favor, selecione uma área de corte.");
+                return;
+            }
+
+            imageCropWidth = parseInt(imageCropWidth);
+            imageCropHeight = parseInt(imageCropHeight);
+
+            $.ajax({
+                url: '/Uploads/CropImage',
+                type: 'POST',
+                data: {
+                    imagePath: $("#my-origin-image").attr("src"),
+                    cropPointX: cropPointX,
+                    cropPointY: cropPointY,
+                    imageCropWidth: imageCropWidth,
+                    imageCropHeight: imageCropHeight
+                },
+                success: function (data) {
+                    $("#my-cropped-image")
+                        .attr("src", data.photoPath)
+                        .show();
+                    $("#my-origin-image").Jcrop(
+                        destroy()
+                    );
+                },
+                error: function (data) { }
+            });
+        }
+    </script>
+}

@@ -1,8 +1,7 @@
-﻿@model SuperHeroi.Infra.CrossCutting.IoC.Security.Model.Manage.IndexViewModel
+﻿@model SuperHeroi.MVC.Models.IndexViewModel
 @{
-    ViewBag.Title = "Manage your account";
+    ViewBag.Title = "Gerencie sua conta";
 }
-
 <h2>@ViewBag.Title.</h2>
 <p class="text-success">@ViewBag.StatusMessage</p>
 <div class="row">
@@ -10,37 +9,37 @@
         <p>
             @if (Model.HasPassword)
             {
-                @Html.ActionLink("Change your password", "ChangePassword")
+                @Html.ActionLink("Trocar de Senha", "ChangePassword")
             }
             else
             {
-                @Html.ActionLink("Pick a password", "SetPassword")
+                @Html.ActionLink("Definir senha para conta local", "SetPassword")
             }
         </p>
         <p>
-            Phone Number: @(Model.PhoneNumber ?? "None") [
+            Número do Telefone: @(Model.PhoneNumber ?? "Nenhum") [
             @if (Model.PhoneNumber != null)
             {
-                @Html.ActionLink("Change", "AddPhoneNumber")
+                @Html.ActionLink("Trocar", "AddPhoneNumber")
                 @: &nbsp;|&nbsp;
-                @Html.ActionLink("Remove", "RemovePhoneNumber")
+                @Html.ActionLink("Remover", "RemovePhoneNumber")
             }
             else
             {
-                @Html.ActionLink("Add", "AddPhoneNumber")
+                @Html.ActionLink("Adicionar", "AddPhoneNumber")
             }
             ]
         </p>
         <p>
-            External Logins: @Model.Logins.Count
-            @Html.ActionLink("[Manage]", "ManageLogins")
+            Logins Sociais: @Model.Logins.Count
+            @Html.ActionLink("[ Gerenciar ]", "ManageLogins")
         </p>
         @if (Model.TwoFactor)
         {
             <form method="post" action="/Manage/DisableTFA">
                 <p>
-                    Two factor is currently enabled:
-                    <input type="submit" value="Disable" class="btn btn-default"/>
+                    Two Factor está habilitado:
+                    <input type="submit" value="Desabilitar" class="btn btn-default" />
                 </p>
             </form>
         }
@@ -48,8 +47,8 @@
         {
             <form method="post" action="/Manage/EnableTFA">
                 <p>
-                    Two factor is currently disabled:
-                    <input type="submit" value="Enable" class="btn btn-default"/>
+                    Two Factor está desabilitado:
+                    <input type="submit" value="Habilitar" class="btn btn-default" />
                 </p>
             </form>
         }
@@ -57,8 +56,8 @@
         {
             <form method="post" action="/Manage/ForgetBrowser">
                 <p>
-                    Browser is curently remembered for two factor:
-                    <input type="submit" value="Forget Browser" class="btn btn-default" />
+                    O browser será lembrado para Two Factor:
+                    <input type="submit" value="Esquecer Browser" class="btn btn-default" />
                 </p>
             </form>
         }
@@ -66,10 +65,13 @@
         {
             <form method="post" action="/Manage/RememberBrowser">
                 <p>
-                    Browser is curently not remembered for two factor:
-                    <input type="submit" value="Remember Browser" class="btn btn-default"/>
+                    O browser NÃO será lembrado para Two Factor:
+                    <input type="submit" value="Lembrar Browser" class="btn btn-default" />
                 </p>
             </form>
         }
+        <p>
+            @Html.ActionLink("Album de fotos", "Index", "Uploads")
+        </p>
     </div>
 </div>

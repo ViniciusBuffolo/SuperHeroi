@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Upload", "Upload")
+</p>
+
+<div class="row">
+    @{
+        if (ViewBag.Arquivos != null)
+        {
+            foreach (var item in ViewBag.Arquivos)
+            {
+                <div class="col-xs-2">
+                    <a href="#" class="thumbnail">
+                        <img src="@ViewBag.Dir@item.Name" class="img-responsive" alt="" />
+                        @Html.ActionLink("Remover", "Delete", "Uploads", new { fileName = item.Name }, null)
+                    </a>
+                </div>
+            }
+        }
+    }
+</div>

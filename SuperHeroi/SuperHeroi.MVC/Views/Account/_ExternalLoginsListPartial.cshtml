@@ -1,15 +1,15 @@
-﻿@model SuperHeroi.Infra.CrossCutting.IoC.Security.Model.Account.ExternalLoginListViewModel
+﻿@model SuperHeroi.MVC.Models.ExternalLoginListViewModel
 @using Microsoft.Owin.Security
 
-<h4>Use um serviço externo para entrar no Sistema.</h4>
+<h4>Utilize uma conta para login.</h4>
 <hr />
 @{
     var loginProviders = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes();
     if (loginProviders.Count() == 0) {
         <div>
             <p>
-                Não existe um serviço de autenticação externa configurado. Leia <a href="http://go.microsoft.com/fwlink/?LinkId=313242">este artigo</a>
-                para maiores detalhes de como configurar sua aplicação ASP.NET para suportar logar-se no sistema utilizando serviços externos.
+                There are no external authentication services configured. See <a href="http://go.microsoft.com/fwlink/?LinkId=313242">this article</a>
+                for details on setting up this ASP.NET application to support logging in via external services.
             </p>
         </div>
     }

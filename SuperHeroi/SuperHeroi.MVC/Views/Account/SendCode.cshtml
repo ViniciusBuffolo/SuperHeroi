@@ -1,4 +1,4 @@
-﻿@model SuperHeroi.Infra.CrossCutting.IoC.Security.Model.Account.SendCodeViewModel
+﻿@model SuperHeroi.MVC.Models.SendCodeViewModel
 @{
     ViewBag.Title = "Enviar código de verificação";
 }
@@ -9,8 +9,9 @@
     @Html.AntiForgeryToken()
     <div class="row">
         <div class="col-md-8">
-            Two Factor Authentication Provider:
+            Provedor de Two Factor Authentication:
             @Html.DropDownListFor(model => model.SelectedProvider, Model.Providers)
+            @Html.HiddenFor(m => m.UserId)
             <input type="submit" value="Enviar" class="btn btn-default" />
         </div>
     </div>

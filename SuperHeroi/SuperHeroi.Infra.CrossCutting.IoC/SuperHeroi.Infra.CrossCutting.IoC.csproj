@@ -129,41 +129,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\UnityConfig.cs" />
-    <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="Container.cs" />
-    <Compile Include="Dependency\Startup\UnityConfig.cs" />
-    <Compile Include="Dependency\Startup\UnityMvcActivator.cs" />
     <Compile Include="NinjectModulo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Security\Controllers\AccountController.cs" />
-    <Compile Include="Security\Controllers\ManageController.cs" />
-    <Compile Include="Security\Data\ApplicationDbContext.cs" />
-    <Compile Include="Security\Domain\ApplicationUser.cs" />
-    <Compile Include="Security\IdentityManager.cs" />
-    <Compile Include="Security\IIdentityManager.cs" />
-    <Compile Include="Security\Manager\ApplicationSignInManager.cs" />
-    <Compile Include="Security\Manager\ApplicationUserManager.cs" />
-    <Compile Include="Security\Model\Account\ExternalLoginConfirmationViewModel.cs" />
-    <Compile Include="Security\Model\Account\ExternalLoginListViewModel.cs" />
-    <Compile Include="Security\Model\Account\ForgotPasswordViewModel.cs" />
-    <Compile Include="Security\Model\Account\ForgotViewModel.cs" />
-    <Compile Include="Security\Model\Account\LoginViewModel.cs" />
-    <Compile Include="Security\Model\Account\RegisterViewModel.cs" />
-    <Compile Include="Security\Model\Account\ResetPasswordViewModel.cs" />
-    <Compile Include="Security\Model\Account\SendCodeViewModel.cs" />
-    <Compile Include="Security\Model\Account\VerifyCodeViewModel.cs" />
-    <Compile Include="Security\Model\Manage\AddPhoneNumberViewModel.cs" />
-    <Compile Include="Security\Model\Manage\ChangePasswordViewModel.cs" />
-    <Compile Include="Security\Model\Manage\ConfigureTwoFactorViewModel.cs" />
-    <Compile Include="Security\Model\Manage\FactorViewModel.cs" />
-    <Compile Include="Security\Model\Manage\IndexViewModel.cs" />
-    <Compile Include="Security\Model\Manage\ManageLoginsViewModel.cs" />
-    <Compile Include="Security\Model\Manage\SetPasswordViewModel.cs" />
-    <Compile Include="Security\Model\Manage\VerifyPhoneNumberViewModel.cs" />
-    <Compile Include="Security\Startup\IdentityStartup.cs" />
-    <Compile Include="Security\TwoFactorAuth\EmailService.cs" />
-    <Compile Include="Security\TwoFactorAuth\SmsService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -181,6 +149,10 @@
     <ProjectReference Include="..\SuperHeroi.Infra.Data\SuperHeroi.Infra.Data.csproj">
       <Project>{86217a09-cfd6-4cde-bf17-55fb1e061422}</Project>
       <Name>SuperHeroi.Infra.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuperHeroi.Infra.Identity\SuperHeroi.Infra.Identity.csproj">
+      <Project>{2F93B9C8-823C-46E0-8964-7C97A9139B74}</Project>
+      <Name>SuperHeroi.Infra.Identity</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
