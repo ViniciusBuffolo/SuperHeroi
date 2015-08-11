@@ -1,8 +1,11 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using SuperHeroi.Application.Interfaces;
 using SuperHeroi.Infra.Identity.IdentityStart;
 using SuperHeroi.Infra.Identity.Models;
 using SuperHeroi.MVC.Models;
@@ -13,10 +16,18 @@ using Microsoft.Owin.Security;
 namespace SuperHeroi.MVC.Controllers
 {
     [Authorize]
-    public class AccountController : Controller
+    public class AccountController : Controller, IDisposable
     {
+        private readonly IHeroiAppService _heroiAppService;
+
+
         public AccountController()
         {
+        }
+
+        public AccountController(IHeroiAppService heroiAppService)
+        {
+            _heroiAppService = heroiAppService;
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
@@ -107,6 +118,11 @@ namespace SuperHeroi.MVC.Controllers
         }
         private async Task SignInAsync(ApplicationUser user, bool isPersistent)
         {
+            var listaClaims = new List<string>
+            {
+                Guid.NewGuid().ToString()
+            };
+
             var clientKey = Request.Browser.Type;
             await UserManager.SignInClientAsync(user, clientKey);
             // Zerando contador de logins errados.
@@ -120,7 +136,7 @@ namespace SuperHeroi.MVC.Controllers
                 (
                     new AuthenticationProperties { IsPersistent = isPersistent }, 
                     // Criação da instancia do Identity e atribuição dos Claims
-                    await user.GenerateUserIdentityAsync(UserManager, ext)
+                    await user.GenerateUserIdentityAsync(UserManager, listaClaims, ext)
                 );
         }
 
@@ -539,6 +555,11 @@ namespace SuperHeroi.MVC.Controllers
             }
             UserManager.Update(user);
             return RedirectToAction("Index", "Home");
+        }
+
+        public void Dispose()
+        {
+            _heroiAppService.Dispose();
         }
     }
 }

@@ -1,0 +1,3 @@
+ErrorNotificacao
+Error: A sequência não contém elementos de correspondência
+-Try-

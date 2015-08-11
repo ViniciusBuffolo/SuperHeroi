@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="SuperHeroiContext-Web.config Connection String" description="SuperHeroiContext Connection String used in web.config by the application to access the database." defaultValue="Data Source=jrrg4zl08i.database.windows.net;Initial Catalog=SuperHeroi;Integrated Security=False;User ID=SuperHeroi;Password=123Vbs!@#;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\GitHub\\SuperHeroi\\SuperHeroi\\SuperHeroi\.MVC\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='SuperHeroiContext']/@connectionString" />
+  </parameter>
+  <parameter name="SuperHeroiIdentity-Web.config Connection String" description="SuperHeroiIdentity Connection String used in web.config by the application to access the database." defaultValue="Data Source=uhkvczwcrg.database.windows.net;Initial Catalog=SuperHeroiIdentity;Integrated Security=False;User ID=SuperHeroiIdentity;Password=123Vbs!@#;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\GitHub\\SuperHeroi\\SuperHeroi\\SuperHeroi\.MVC\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='SuperHeroiIdentity']/@connectionString" />
+  </parameter>
+</parameters>

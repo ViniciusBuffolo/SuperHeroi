@@ -24,18 +24,24 @@ namespace SuperHeroi.Infra.CrossCutting.IoC
             Bind<IHeroiAppService>().To<HeroiAppService>();
             Bind<IPoderAppService>().To<PoderAppService>();
             Bind<IHeroiPoderAppService>().To<HeroiPoderAppService>();
+            Bind<IPedidoAppService>().To<PedidoAppService>();
+            Bind<INotificacaoAppService>().To<NotificacaoAppService>();
 
             // service
             Bind(typeof(IServiceBase<>)).To(typeof(ServiceBase<>));
             Bind<IHeroiService>().To<HeroiService>();
             Bind<IPoderService>().To<PoderService>();
             Bind<IHeroiPoderService>().To<HeroiPoderService>();
+            Bind<IPedidoService>().To<PedidoService>();
+            Bind<INotificacaoService>().To<NotificacaoService>();
 
             // data repos
             Bind(typeof(IRepositoryBase<>)).To(typeof(RepositoryBase<,>));
             Bind<IHeroiRepository>().To<HeroiRepository>();
             Bind<IPoderRepository>().To<PoderRepository>();
             Bind<IHeroiPoderRepository>().To<HeroiPoderRepository>();
+            Bind<IPedidoRepository>().To<PedidoRepository>();
+            Bind<INotificacaoRepository>().To<NotificacaoRepository>();
 
             // data configs
             Bind(typeof(IContextManager<>)).To(typeof(ContextManager<>));

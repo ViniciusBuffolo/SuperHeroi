@@ -1,0 +1,7 @@
+Log de Notificações
+Código de Notificação: AE353EB3A365A3654B466462EF88F41020E8
+Código da transação: B7F24208-E6F0-44AB-B6CB-7EB75C24B4B5
+Status da transação: Em análise
+Código da referência: REF093a9649-f41d-4938-ab0b-0b6c38536e2a
+Tipo da transação: 11
+Tipo notificação: transaction

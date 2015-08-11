@@ -21,7 +21,7 @@ namespace SuperHeroi.MVC.Controllers
             var claimsIdentity = User.Identity as ClaimsIdentity;
             if (claimsIdentity != null)
             {
-                var idUsuario = claimsIdentity.FindFirst(c => c.Type == "ClaimIdUsuario").Value;
+                var idUsuario = claimsIdentity.FindFirst(c => c.Type == "ClaimIdHeroi").Value;
 
                 var dirUsuario = idUsuario + "/";
                 var dir = Server.MapPath(DiretorioCrop + dirUsuario);

@@ -65,11 +65,17 @@
     <Compile Include="Interfaces\IAppServiceBase.cs" />
     <Compile Include="Interfaces\IHeroiPoderAppService.cs" />
     <Compile Include="Interfaces\IHeroiAppService.cs" />
+    <Compile Include="Interfaces\INotificacaoAppService.cs" />
+    <Compile Include="Interfaces\IPedidoAppService.cs" />
     <Compile Include="Interfaces\IPoderAppService.cs" />
+    <Compile Include="NotificacaoAppService.cs" />
+    <Compile Include="PedidoAppService.cs" />
     <Compile Include="PoderAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\HeroiPoderViewModel.cs" />
     <Compile Include="ViewModels\HeroiViewModel.cs" />
+    <Compile Include="ViewModels\NotificacaoViewModel.cs" />
+    <Compile Include="ViewModels\PedidoViewModel.cs" />
     <Compile Include="ViewModels\PoderAssigned.cs" />
     <Compile Include="ViewModels\PoderViewModel.cs" />
   </ItemGroup>

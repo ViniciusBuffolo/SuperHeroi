@@ -15,6 +15,6 @@ C:\Users\Vinicius\Desktop\SuperHeroi-master\SuperHeroi\SuperHeroi.Domain\obj\Deb
 C:\Users\Vinicius\Desktop\SuperHeroi-master\SuperHeroi\SuperHeroi.Domain\obj\Debug\SuperHeroi.Domain.pdb
 D:\GitHub\SuperHeroi\SuperHeroi\SuperHeroi.Domain\bin\Debug\SuperHeroi.Domain.dll
 D:\GitHub\SuperHeroi\SuperHeroi\SuperHeroi.Domain\bin\Debug\SuperHeroi.Domain.pdb
-D:\GitHub\SuperHeroi\SuperHeroi\SuperHeroi.Domain\obj\Debug\SuperHeroi.Domain.csprojResolveAssemblyReference.cache
 D:\GitHub\SuperHeroi\SuperHeroi\SuperHeroi.Domain\obj\Debug\SuperHeroi.Domain.dll
 D:\GitHub\SuperHeroi\SuperHeroi\SuperHeroi.Domain\obj\Debug\SuperHeroi.Domain.pdb
+D:\GitHub\SuperHeroi\SuperHeroi\SuperHeroi.Domain\obj\Debug\SuperHeroi.Domain.csprojResolveAssemblyReference.cache

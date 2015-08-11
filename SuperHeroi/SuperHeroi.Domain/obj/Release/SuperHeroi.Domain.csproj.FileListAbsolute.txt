@@ -1,0 +1,5 @@
+D:\GitHub\SuperHeroi\SuperHeroi\SuperHeroi.Domain\bin\Release\SuperHeroi.Domain.dll
+D:\GitHub\SuperHeroi\SuperHeroi\SuperHeroi.Domain\bin\Release\SuperHeroi.Domain.pdb
+D:\GitHub\SuperHeroi\SuperHeroi\SuperHeroi.Domain\obj\Release\SuperHeroi.Domain.csprojResolveAssemblyReference.cache
+D:\GitHub\SuperHeroi\SuperHeroi\SuperHeroi.Domain\obj\Release\SuperHeroi.Domain.dll
+D:\GitHub\SuperHeroi\SuperHeroi\SuperHeroi.Domain\obj\Release\SuperHeroi.Domain.pdb

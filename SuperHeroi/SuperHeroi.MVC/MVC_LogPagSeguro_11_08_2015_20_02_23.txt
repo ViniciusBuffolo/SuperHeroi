@@ -1,0 +1,7 @@
+Log de Notificações
+Código de Notificação: CADB850CD51CD51C7EEEE47C3FA01C865A08
+Código da transação: 653E07E8-D75D-4706-B9CF-E832B7C2542D
+Status da transação: Paga
+Código da referência: REF058963be-a2f1-41db-8dab-db7e2a2df6fb
+Tipo da transação: 11
+Tipo notificação: transaction

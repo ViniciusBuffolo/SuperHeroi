@@ -16,6 +16,8 @@ namespace SuperHeroi.Application.AutoMapper
             Mapper.CreateMap<HeroiViewModel, Heroi>();
             Mapper.CreateMap<PoderViewModel, Poder>();
             Mapper.CreateMap<HeroiPoderViewModel, HeroiPoder>();
+            Mapper.CreateMap<PedidoViewModel, Pedido>();
+            Mapper.CreateMap<NotificacaoViewModel, Notificacao>();
         }
     }
 }

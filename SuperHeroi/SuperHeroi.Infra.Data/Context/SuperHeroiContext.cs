@@ -21,6 +21,8 @@ namespace SuperHeroi.Infra.Data.Context
         public IDbSet<Heroi> Herois { get; set; }
         public IDbSet<Poder> Poderes { get; set; }
         public IDbSet<HeroiPoder> HeroisPoderes { get; set; }
+        public IDbSet<Pedido> Pedidos { get; set; }
+        public IDbSet<Notificacao> Notificacoes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -43,6 +45,8 @@ namespace SuperHeroi.Infra.Data.Context
             // ModelConfiguration
             modelBuilder.Configurations.Add(new HeroiConfiguration());
             modelBuilder.Configurations.Add(new PoderConfiguration());
+            modelBuilder.Configurations.Add(new PedidoConfiguration());
+            modelBuilder.Configurations.Add(new NotificacaoConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }

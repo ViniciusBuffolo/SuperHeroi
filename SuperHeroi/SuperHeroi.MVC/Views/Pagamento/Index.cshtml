@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div>
+    @*@using (Html.BeginForm("Assinar", "Pagamento", FormMethod.Post, new { role = "form" }))
+    {
+        <input type="submit" value="Assinar">
+    }*@
+    @using (Html.BeginForm("Assinar", "Pagamento", FormMethod.Post, new { role = "form" }))
+    {
+        @Html.Label("Plano 1")
+        @Html.Hidden("PlanoId", 1)
+
+        <input type="submit" value="Assinar">
+    }
+
+    <hr />
+
+    @using (Html.BeginForm("Assinar", "Pagamento", FormMethod.Post, new { role = "form" }))
+    {
+        @Html.Label("Plano 2")
+        @Html.Hidden("PlanoId", 2)
+
+        <input type="submit" value="Assinar">
+    }
+
+    <hr />
+
+    @using (Html.BeginForm("Assinar", "Pagamento", FormMethod.Post, new { role = "form" }))
+    {
+        @Html.Label("Plano 3")
+        @Html.Hidden("PlanoId", 3)
+
+        <input type="submit" value="Assinar">
+    }
+
+    <br />
+    --------------
+    <br />
+
+    @using (Html.BeginForm("CancelarAssinatura", "Pagamento", FormMethod.Post, new { role = "form" }))
+    {
+        @Html.Label("Código Transação PreApproval")
+        @Html.TextBox("txtPreApprovalCodeByVerificar")
+        <br />
+            <input type="submit" value="Cancelar Assinatura PreApproval">
+    }
+
+    <br />
+    --------------
+    <br />
+
+    @using (Html.BeginForm("VerificarPreApproval", "Pagamento", FormMethod.Post, new { role = "form" }))
+    {
+        @Html.Label("Código Notificação PreApproval");
+        @Html.TextBox("txtTransacaoByVerificar")
+        <br />
+            <input type="submit" value="Verificar PreApproval">
+    }
+</div>

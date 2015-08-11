@@ -1,0 +1,7 @@
+Log de Notificações
+Código de Notificação: F8345B1B1FBD1FBD1D1AA4DDAF9233FC75FB
+Código da transação: 653E07E8-D75D-4706-B9CF-E832B7C2542D
+Status da transação: Em análise
+Código da referência: REF058963be-a2f1-41db-8dab-db7e2a2df6fb
+Tipo da transação: 11
+Tipo notificação: transaction

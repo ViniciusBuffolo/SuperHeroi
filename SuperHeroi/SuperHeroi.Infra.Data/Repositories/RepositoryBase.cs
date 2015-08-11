@@ -47,7 +47,8 @@ namespace SuperHeroi.Infra.Data.Repositories
         public void Update(TEntity obj)
         {
             var entry = Context.Entry(obj);
-            DbSet.Attach(obj);
+            if (entry.State == EntityState.Detached)
+                DbSet.Attach(obj);
             entry.State = EntityState.Modified;
         }
 

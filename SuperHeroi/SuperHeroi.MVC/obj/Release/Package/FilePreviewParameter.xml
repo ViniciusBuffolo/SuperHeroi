@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="superheroi" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\GitHub\\SuperHeroi\\SuperHeroi\\SuperHeroi\.MVC\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^D:\\GitHub\\SuperHeroi\\SuperHeroi\\SuperHeroi\.MVC\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="SuperHeroiContext-Web.config Connection String" description="" value="Data Source=tcp:jrrg4zl08i.database.windows.net,1433;Initial Catalog=SuperHeroi;User ID=SuperHeroi@jrrg4zl08i;Password=123Vbs!@#" tags="">
+    <parameterEntry kind="XmlFile" scope="D:\\GitHub\\SuperHeroi\\SuperHeroi\\SuperHeroi\.MVC\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='SuperHeroiContext']/@connectionString" />
+  </parameter>
+  <parameter name="SuperHeroiIdentity-Web.config Connection String" description="" value="Data Source=tcp:jrrg4zl08i.database.windows.net,1433;Initial Catalog=SuperHeroi;User ID=SuperHeroi@jrrg4zl08i;Password=123Vbs!@#" tags="">
+    <parameterEntry kind="XmlFile" scope="D:\\GitHub\\SuperHeroi\\SuperHeroi\\SuperHeroi\.MVC\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='SuperHeroiIdentity']/@connectionString" />
+  </parameter>
+</parameters>
