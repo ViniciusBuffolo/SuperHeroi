@@ -45,13 +45,13 @@
   <!-- user's credential -->
   <Credential>
     <!-- your email here -->
-    <Email>vinicius.buffolo@gmail.com</Email>
+    <Email></Email>
     <!-- your token here -->
-    <Token>0407216083C244E8B62AE20E7EDECB1D</Token>
+    <Token></Token>
     <!-- your sandbox email here -->
-    <SandboxEmail>vinicius.buffolo@gmail.com</SandboxEmail>
+    <SandboxEmail></SandboxEmail>
     <!-- your sandbox token here -->
-    <SandboxToken>F34C2221EA7C4CD0A475A9AEB75D5265</SandboxToken>
+    <SandboxToken></SandboxToken>
   </Credential>
   <!-- configuration default for PagSeguro API-->
   <Configuration>
